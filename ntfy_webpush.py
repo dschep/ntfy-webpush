@@ -23,13 +23,13 @@ def setup():
     public_key_path = os.path.join(ntfy_data_dir, 'public_key.pem')
 
     if os.path.exists(private_key_path):
-        print ('Loading from' + private_key_path)
+        print ('Loading from ' + private_key_path)
         vapid = Vapid01.from_file(private_key_path)
     else:
         vapid.generate_keys()
-        print ('Generating' + private_key_path)
+        print ('Generating ' + private_key_path)
         vapid.save_key(private_key_path)
-        print ('Generating' + public_key_path)
+        print ('Generating ' + public_key_path)
         vapid.save_public_key(public_key_path)
 
     raw_pub = vapid.public_key.public_numbers().encode_point()
