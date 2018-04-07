@@ -3,6 +3,8 @@
 
 Brining webpush notifications to ntfy.
 
+.. image:: screenshot.png
+
 Quick start
 ~~~~~~~~~~~
 
