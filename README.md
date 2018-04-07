@@ -5,7 +5,7 @@ Brining webpush notifications to ntfy.
 ### Quick start
 
 ```
-sudo pip install https://github.com/dschep/ntfy-webpush#egg=ntfy-webpush
+sudo pip install ntfy-webpush
 ntfy-webpush
 ```
 
