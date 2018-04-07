@@ -1,0 +1,43 @@
+<title>ntfy web-push</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/x-icon" href="ntfy.png">
+<link rel="stylesheet" href="index.css">
+
+<h1><img src="ntfy.png" class="logo"/><span class="pre">ntfy</span> web-push</h1>
+
+<p class="info">
+To get started, install <span class="pre">ntfy-webpush</span> and run it to generate keys, then follow the link
+then the output to reload this page with a public key.
+<code>$ sudo pip install ntfy-webpush
+$ ntfy-webpush
+....</code>
+</p>
+
+<p class="subscribe">
+    When a key is loaded, click subscribe to subscribe to notifications in this browser and then
+    copy the config below into your <span class="pre">ntfy.yml</span>
+    <p>
+        <button id="subscribe" disabled>Subscribe</button>
+    </p>
+    <code id="config"></code>
+    <div style="display:none" id="no-sw">
+        Sorry, your browser doesn't support web-push.
+    </div>
+</p>
+
+<p class="usage">
+Then send a test notification with:
+</p>
+<code>ntfy -b ntfy_webpush send 'testing webpush!'</code>
+
+<div class="qr">
+<h4>Subscribing on your phone</h4>
+<p>
+To subscribe on notifications on your phone, open this same page with the full url on your phone.
+Here's a QR code to scan for convinence.
+</p>
+<img src="https://api.qrserver.com/v1/create-qr-code/?data=http://localhost:8000/#publicKey=BOjWSVclGFTAxNYwXNoJSxp9Ier_505GWTWSgjrRSPpRC22K5tXthBnlT62XnSh8GVEEolzzULgeSo7zCuAjnkM&privateKeyPath=/home/dschep/.local/share/ntfy/private_key.pem"/>
+</div>
+
+<script src="https://cdn.rawgit.com/nodeca/js-yaml/bab69b5d/dist/js-yaml.min.js"></script>
+<script src="index.js"></script>
