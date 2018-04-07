@@ -37,3 +37,12 @@ Example config:
         p256dh: >-
             xXXxXXxxxXXXXxxxXXxxXxXXxXXxxxXXXXxxxXXxxXxXXxXXxxxXXXXxxxXXxxXxXXxXXxxxXXXXxxxXXxxXXXX
     private_key: /home/user/.local/share/ntfy/private_key.pem
+
+Video
+~~~~~
+Click the screenshot below for a video demonstrating ``ntfy-webpush`` on ChromeOS with Google Cloud
+Shell.
+
+|Video|_
+.. |Video| image:: chromeos.png
+.. _Video: chromeos.webm
