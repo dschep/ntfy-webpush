@@ -23,19 +23,19 @@ def setup():
     public_key_path = os.path.join(ntfy_data_dir, 'public_key.pem')
 
     if os.path.exists(private_key_path):
-        print('Loading from', private_key_path)
+        print ('Loading from' + private_key_path)
         vapid = Vapid01.from_file(private_key_path)
     else:
         vapid.generate_keys()
-        print('Generating', private_key_path)
+        print ('Generating' + private_key_path)
         vapid.save_key(private_key_path)
-        print('Generating', public_key_path)
+        print ('Generating' + public_key_path)
         vapid.save_public_key(public_key_path)
 
     raw_pub = vapid.public_key.public_numbers().encode_point()
-    print()
-    print('Open the following url in your browser to continue configuring ntfy-webpush')
-    print('https://dschep.github.io/ntfy-webpush/#publicKey={0}&privateKeyPath={1}'.format(
+    print ()
+    print ('Open the following url in your browser to continue configuring ntfy-webpush')
+    print ('https://dschep.github.io/ntfy-webpush/#publicKey={0}&privateKeyPath={1}'.format(
         b64urlencode(raw_pub), private_key_path))
 
 if __name__ == '__main__':
