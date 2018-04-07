@@ -44,5 +44,6 @@ Click the screenshot below for a video demonstrating ``ntfy-webpush`` on ChromeO
 Shell.
 
 |Video|_
-.. |Video| image:: chromeos.png
-.. _Video: chromeos.webm
+
+.. |Video| image:: ./chromeos.png
+.. _Video: https://raw.githubusercontent.com/dschep/ntfy-webpush/master/chromeos.webm
