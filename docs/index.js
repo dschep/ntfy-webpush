@@ -42,9 +42,9 @@ if (publicKey) {
               applicationServerKey: urlBase64ToUint8Array(publicKey),
             })))
             .then((subscription) => {
+              document.querySelector('.qr-code').src = 'https://api.qrserver.com/v1/create-qr-code/?data='
+                                                        + encodeURI(window.location);
               document.querySelector('#config').innerHTML = subscriptionToConfig(subscription);
-            })
-            .then(() => {
               sub.innerHTML = 'Unsubscribe';
               sub.classList.add('unsub');
             })
@@ -54,6 +54,7 @@ if (publicKey) {
           .then((subscription) => subscription.unsubscribe())
           .then(() => {
             document.querySelector('#config').innerHTML = '';
+              document.querySelector('.qr-code').src = '';
           })
           .then(() => {
             sub.innerHTML = 'Subscribe';
@@ -65,6 +66,8 @@ if (publicKey) {
           .then((subscription) => {
             if (subscription) {
               document.querySelector('#config').innerHTML = subscriptionToConfig(subscription);
+              document.querySelector('.qr-code').src = 'https://api.qrserver.com/v1/create-qr-code/?data=';
+              document.querySelector('.qr-code').src += encodeURI(window.location);
               sub.innerHTML = 'Unsubscribe';
               sub.classList.add('unsub');
             }
