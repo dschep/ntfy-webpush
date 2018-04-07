@@ -18,7 +18,7 @@ URL = 'https://github.com/dschep/ntfy-webpush'
 EMAIL = 'dschep@gmail.com'
 AUTHOR = 'Daniel Schep'
 REQUIRES_PYTHON = '>=2.7.0'
-VERSION = '0.1.1'
+VERSION = '0.1.2'
 
 # What packages are required for this module to be executed?
 REQUIRED = [

@@ -33,7 +33,7 @@ def setup():
         vapid.save_public_key(public_key_path)
 
     raw_pub = vapid.public_key.public_numbers().encode_point()
-    print ()
+    print ('')
     print ('Open the following url in your browser to continue configuring ntfy-webpush')
     print ('https://dschep.github.io/ntfy-webpush/#publicKey={0}&privateKeyPath={1}'.format(
         b64urlencode(raw_pub), private_key_path))
