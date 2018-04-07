@@ -59,7 +59,8 @@ if (publicKey) {
             sub.innerHTML = 'Subscribe';
             sub.classList.remove('unsub');
           });
-        sub.onclick = (e) => (e.target.classList.has('unsub') ? unsubOnclick() : subOnclick());
+        sub.onclick = (e) => (Array.from(e.target.classList.values()).includes('unsub')
+                              ? unsubOnclick() : subOnclick());
         registration.pushManager.getSubscription()
           .then((subscription) => {
             if (subscription) {
