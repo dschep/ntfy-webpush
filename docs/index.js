@@ -32,7 +32,7 @@ if (publicKey) {
   document.querySelector('.qr').classList.add('show');
   const sub = document.querySelector('button#subscribe');
   sub.disabled = false;
-  document.querySelector('.qr-code').src = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURI(window.location)}`;
+  document.querySelector('.qr-code').src = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(window.location)}`;
   if (navigator.serviceWorker) {
     navigator.serviceWorker.register('./sw.js')
       .then((registration) => {
