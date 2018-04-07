@@ -17,9 +17,9 @@ Then follow the directions.
 
 Config Options
 ~~~~~~~~~~~~~~
-    * ``subscription_info`` - A `PushSubscription <https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription>`_ Object
-    * ``private_key`` - the path to private key file or anything else
-      `that works with pywebpush <https://github.com/web-push-libs/pywebpush>`_.
+* ``subscription_info`` - A `PushSubscription <https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription>`_ Object
+* ``private_key`` - the path to private key file or anything else
+    `that works with pywebpush <https://github.com/web-push-libs/pywebpush>`_.
 
 Example config:
 ~~~~~~~~~~~~~~~
