@@ -1,5 +1,5 @@
-☁️🔔``ntfy-webpush``
-===================
+``ntfy-webpush``
+================
 
 Brining webpush notifications to ntfy.
 
