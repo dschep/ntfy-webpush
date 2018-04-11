@@ -82,7 +82,7 @@ const Subscribe = ({publicKey, subscription, subscribe, unsubscribe}) => {
         When a key is loaded, click subscribe to subscribe to notifications in this browser and then
         copy the config below into your <span class="pre">ntfy.yml</span>
         <p>
-          <button disabled={!publicKey||subscription} onclick={() => (subscription?unsubscribe():subscribe())}>
+          <button disabled={!publicKey&&!subscription} onclick={() => (subscription?unsubscribe():subscribe())}>
             {subscription?'Unsubscribe':'Subscribe'}
           </button>
         </p>
