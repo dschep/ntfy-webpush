@@ -20,9 +20,6 @@ code {
 .pre {
     font-family: monospace;
 }
-.qr {
-    display: none;
-}
 .show {
     display: block;
 }
