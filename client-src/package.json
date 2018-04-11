@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "parcel build -d ../docs index.html"
+    "build": "parcel build -d ../docs --public-url . index.html"
   },
   "author": "",
   "license": "ISC",
