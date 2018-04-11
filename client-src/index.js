@@ -18,7 +18,7 @@ function urlBase64ToUint8Array(base64String) {
   return outputArray;
 }
 
-const subscriptionToConfig = (subscription, privateKey) => yaml.dump({
+const subscriptionToConfig = (subscription, privateKeyPath) => yaml.dump({
   ntfy_webpush: {
     subscription_info: JSON.parse(JSON.stringify(subscription)),
     private_key: privateKeyPath || '/path/to/private_key.pem',
@@ -74,9 +74,9 @@ const Info = () => (
   </p>
 );
 
-const Subscribe = ({publicKey, subscription, subscribe, unsubscribe}) => {
+const Subscribe = () => ({publicKey, privateKeyPath, subscription}, {subscribe, unsubscribe}) => {
   const isSubscribed = Boolean(subscription);
-  const config = isSubscribed?subscriptionToConfig(subscription):'';
+  const config = isSubscribed?subscriptionToConfig(subscription, privateKeyPath):'';
   return (
     <p class="subscribe">
         When a key is loaded, click subscribe to subscribe to notifications in this browser and then
@@ -121,24 +121,20 @@ const actions = {
 };
 
 const view = (state, actions) => (
-  <div oncreate={actions.getSubscription}>
-    <Header></Header>
+  <div>
+    <Header/>
 
-    <Info></Info>
+    <Info/>
 
-    <Subscribe
-      subscribe={actions.subscribe}
-      unsubscribe={actions.unsubscribe}
-      subscription={state.subscription}
-      publicKey={state.publicKey}>
-    </Subscribe>
+    <Subscribe/>
 
-    <Usage></Usage>
+    <Usage/>
 
-    <QrCode publicKey={state.publicKey}></QrCode>
+    <QrCode publicKey={state.publicKey}/>
 
     <GithubCorner/>
   </div>
 );
 
-app(state, actions, view, document.body);
+const main = app(state, actions, view, document.body);
+main.getSubscription();
