@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "hyperapp": "^1.2.5",
-    "js-yaml": "^3.11.0",
+    "js-yaml": "^3.13.1",
     "parcel-bundler": "^1.12.5"
   }
 }
