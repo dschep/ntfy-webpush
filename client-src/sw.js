@@ -6,6 +6,7 @@ self.addEventListener('push', function(event) {
     self.registration.showNotification(payload.title, {
       body: payload.message,
       icon,
+      requireInteraction: true,
     })
   );
 });
